@@ -59,11 +59,6 @@
 </div></section>
 <footer class="foot"><div class="wrap"><span>© 2026 Birxlabs</span><span>Independent by design.</span><a href="https://instagram.com/birxlabs">@birxlabs</a></div></footer>
 </div>
-<script>
-document.documentElement.classList.add('js');
-if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches){document.querySelectorAll('.reveal').forEach(e=>e.classList.add('in'))}
-else{const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{rootMargin:'0px 0px -10% 0px'});document.querySelectorAll('.reveal').forEach(e=>io.observe(e))}
-
-</script>
+<script src="./reveal.js" defer></script>
 </body>
 </html>
