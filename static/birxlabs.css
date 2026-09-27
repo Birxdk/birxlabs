@@ -1,0 +1,381 @@
+/*
+ * Birxlabs reusable UI styles.
+ * Source of truth: Birxlabs Brand Guide.
+ * No reset, framework, font binaries, React components or application code included.
+ */
+
+:root {
+  --bl-paper: #F2EEE5;
+  --bl-ink: #252723;
+  --bl-clay: #984B35;
+  --bl-linen: #D9D0BE;
+
+  --bl-forest: #455A4D;
+  --bl-forest-tint: #D8D8CE;
+  --bl-fjord: #496675;
+  --bl-fjord-tint: #D9DAD4;
+  --bl-ochre: #B58A42;
+  --bl-ochre-tint: #E9DFCD;
+  --bl-heather: #796878;
+  --bl-heather-tint: #E0DAD5;
+
+  --bl-font-display: "P052", Georgia, serif;
+  --bl-font-sans: "Nimbus Sans", Arial, sans-serif;
+
+  --bl-space-1: 4px;
+  --bl-space-2: 8px;
+  --bl-space-3: 12px;
+  --bl-space-4: 16px;
+  --bl-space-6: 24px;
+  --bl-space-8: 32px;
+  --bl-space-12: 48px;
+  --bl-space-16: 64px;
+  --bl-space-24: 96px;
+
+  --bl-page-mobile: 24px;
+  --bl-page-desktop-compact: 44px;
+  --bl-page-desktop: 48px;
+  --bl-grid-gutter-tight: 16px;
+  --bl-grid-gutter: 24px;
+  --bl-panel-padding: 32px;
+
+  --bl-radius: 0px;
+  --bl-border: 1px;
+  --bl-min-target: 44px;
+  --bl-button-height: 46px;
+  --bl-input-height: 48px;
+  --bl-input-padding-x: 14px;
+  --bl-button-padding-x: 20px;
+
+  --bl-focus-width: 3px;
+  --bl-focus-offset: 4px;
+
+  --bl-motion-fast: 160ms;
+  --bl-motion-ui: 200ms;
+  --bl-motion-calm: 240ms;
+  --bl-motion-editorial: 360ms;
+}
+
+/* Layout */
+.bl-container {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: var(--bl-page-mobile);
+}
+
+.bl-reading {
+  width: 100%;
+  max-width: 760px;
+}
+
+.bl-reading--narrow {
+  max-width: 680px;
+}
+
+.bl-grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--bl-grid-gutter-tight);
+}
+
+.bl-section {
+  padding-block: var(--bl-space-16);
+}
+
+@media (min-width: 1024px) {
+  .bl-container {
+    padding-inline: var(--bl-page-desktop);
+  }
+
+  .bl-container--compact {
+    padding-inline: var(--bl-page-desktop-compact);
+  }
+
+  .bl-grid-12 {
+    gap: var(--bl-grid-gutter);
+  }
+
+  .bl-section {
+    padding-block: var(--bl-space-24);
+  }
+}
+
+/* Typography */
+.bl-display,
+.bl-section-title {
+  margin: 0;
+  font-family: var(--bl-font-display);
+  font-weight: 400;
+}
+
+.bl-display {
+  font-size: 44px;
+  line-height: 48px;
+  letter-spacing: -0.03em;
+}
+
+.bl-section-title {
+  font-size: 32px;
+  line-height: 38px;
+  letter-spacing: -0.02em;
+}
+
+.bl-card-title {
+  margin: 0;
+  font-family: var(--bl-font-sans);
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.bl-intro,
+.bl-body,
+.bl-nav,
+.bl-label,
+.bl-eyebrow {
+  font-family: var(--bl-font-sans);
+  font-weight: 400;
+}
+
+.bl-intro {
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.bl-body {
+  font-size: 16px;
+  line-height: 26px;
+}
+
+.bl-nav {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.bl-label {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.bl-eyebrow {
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .bl-display {
+    font-size: 56px;
+    line-height: 60px;
+  }
+
+  .bl-section-title {
+    font-size: 36px;
+    line-height: 42px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .bl-display {
+    font-size: 72px;
+    line-height: 76px;
+  }
+
+  .bl-section-title {
+    font-size: 40px;
+    line-height: 46px;
+  }
+
+  .bl-card-title {
+    font-size: 24px;
+    line-height: 30px;
+  }
+
+  .bl-intro {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .bl-body {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+
+/* Controls */
+.bl-label-control {
+  display: block;
+  margin-bottom: 7px;
+  font-family: var(--bl-font-sans);
+  font-size: 12px;
+  line-height: 18px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bl-ink);
+}
+
+.bl-input,
+.bl-select,
+.bl-textarea {
+  width: 100%;
+  border: var(--bl-border) solid #a9a596;
+  border-radius: var(--bl-radius);
+  background: var(--bl-paper);
+  color: var(--bl-ink);
+  font-family: var(--bl-font-sans);
+  font-size: 16px;
+}
+
+.bl-input,
+.bl-select {
+  height: var(--bl-input-height);
+  padding-inline: var(--bl-input-padding-x);
+}
+
+.bl-textarea {
+  min-height: 144px;
+  padding: 12px 14px;
+  resize: vertical;
+}
+
+.bl-field + .bl-field {
+  margin-top: 20px;
+}
+
+.bl-button {
+  min-width: var(--bl-min-target);
+  height: var(--bl-button-height);
+  padding-inline: var(--bl-button-padding-x);
+  border: var(--bl-border) solid var(--bl-ink);
+  border-radius: var(--bl-radius);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--bl-font-sans);
+  font-size: 16px;
+  line-height: 24px;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color var(--bl-motion-ui) ease-out,
+    color var(--bl-motion-ui) ease-out,
+    opacity var(--bl-motion-ui) ease-out,
+    transform var(--bl-motion-ui) ease-out;
+}
+
+.bl-button--primary {
+  background: var(--bl-clay);
+  border-color: var(--bl-clay);
+  color: var(--bl-paper);
+}
+
+.bl-button--primary:hover {
+  background: var(--bl-ink);
+  border-color: var(--bl-ink);
+}
+
+.bl-button--secondary {
+  background: transparent;
+  color: var(--bl-ink);
+}
+
+.bl-button--secondary:hover {
+  background: var(--bl-ink);
+  color: var(--bl-paper);
+}
+
+.bl-button:disabled {
+  opacity: 0.42;
+  cursor: not-allowed;
+}
+
+.bl-button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.bl-link {
+  color: var(--bl-clay);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.bl-input:focus-visible,
+.bl-select:focus-visible,
+.bl-textarea:focus-visible,
+.bl-button:focus-visible,
+.bl-link:focus-visible,
+.bl-focusable:focus-visible {
+  outline: var(--bl-focus-width) solid var(--bl-ink);
+  outline-offset: var(--bl-focus-offset);
+}
+
+.bl-on-ink .bl-button:focus-visible,
+.bl-on-ink .bl-link:focus-visible,
+.bl-on-ink .bl-focusable:focus-visible {
+  outline-color: var(--bl-paper);
+}
+
+/* Surfaces */
+.bl-panel,
+.bl-card {
+  border-radius: var(--bl-radius);
+  padding: var(--bl-panel-padding);
+}
+
+.bl-panel {
+  border: var(--bl-border) solid rgba(37, 39, 35, 0.2);
+  background: var(--bl-paper);
+  color: var(--bl-ink);
+}
+
+.bl-card {
+  background: var(--bl-linen);
+  color: var(--bl-ink);
+}
+
+.bl-panel--dark {
+  border-color: var(--bl-ink);
+  background: var(--bl-ink);
+  color: var(--bl-paper);
+}
+
+.bl-rule-card {
+  border-top: var(--bl-border) solid currentColor;
+  padding-top: 18px;
+}
+
+/* Logo icon only. Do not redraw the mark. */
+.bl-logo-icon {
+  display: block;
+  width: 48px;
+  height: auto;
+}
+
+.bl-logo-icon--minimum {
+  width: 32px;
+}
+
+/* Motion */
+.bl-hover-shift {
+  transition:
+    transform var(--bl-motion-ui) ease-out,
+    opacity var(--bl-motion-ui) ease-out;
+}
+
+.bl-hover-shift:hover {
+  transform: translateY(-1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bl-button,
+  .bl-hover-shift {
+    transition: none;
+    transform: none;
+  }
+}

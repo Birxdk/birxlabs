@@ -1,0 +1,112 @@
+/* v4.1 · Workshop */
+*{box-sizing:border-box}
+body{margin:0;background:var(--bl-paper);color:var(--bl-ink);font-family:var(--bl-font-sans);font-size:16px;line-height:26px;overflow-x:hidden}
+a{color:inherit}
+img{display:block;max-width:100%}
+.skip{position:absolute;left:-999px;top:8px;background:var(--bl-paper);color:var(--bl-ink);padding:10px 16px;z-index:50}
+.skip:focus{left:8px}
+:focus-visible{outline:3px solid var(--bl-ink);outline-offset:4px}
+.dark{background:var(--bl-ink);color:var(--bl-paper)}
+.dark :focus-visible{outline-color:var(--bl-paper)}
+.wrap{max-width:1440px;margin:0 auto;padding:0 24px}
+.eyebrow{font-size:12px;line-height:18px;letter-spacing:.1em;text-transform:uppercase}
+.serif{font-family:var(--bl-font-display);font-weight:400}
+
+/* Header over ink */
+.head .wrap{height:80px;display:flex;align-items:center;justify-content:space-between}
+.brand{display:flex;align-items:center;gap:12px;font-size:20px;letter-spacing:-.04em;text-decoration:none;min-height:44px}
+.logo{width:32px;height:39px;display:block}
+.head nav{display:flex;gap:24px}
+.head nav a{text-decoration:none;padding:10px 0;border-bottom:1px solid transparent;transition:border-color 200ms ease-out}
+.head nav a:hover{border-color:currentColor}
+.head nav .d{display:none}
+
+/* Hero */
+.hero{position:relative;overflow:hidden}
+.hero .wrap{position:relative;z-index:2;padding-top:40px;padding-bottom:200px}
+.hero h1{font-size:48px;line-height:.98;letter-spacing:-.035em;margin:16px 0 24px;max-width:900px}
+.hero h1 em{font-style:normal;color:#E0A58F} /* clay lifted for ink: 7.1:1 on ink */
+.hero p{font-size:18px;line-height:28px;max-width:540px;margin:0}
+.hero-steps{position:absolute;left:0;right:0;bottom:0;height:140px;display:flex;align-items:flex-end}
+.hero-steps i{flex:1;background:var(--bl-paper)}
+.hero-steps i:nth-child(1){height:20%}.hero-steps i:nth-child(2){height:40%}.hero-steps i:nth-child(3){height:60%}.hero-steps i:nth-child(4){height:80%;background:var(--bl-clay)}.hero-steps i:nth-child(5){height:100%;background:var(--bl-clay)}
+
+
+/* Steps rise once on load */
+@keyframes rise{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+.hero-steps i{transform-origin:50% 100%;animation:rise 360ms ease-out both}
+.hero-steps i:nth-child(2){animation-delay:60ms}.hero-steps i:nth-child(3){animation-delay:120ms}.hero-steps i:nth-child(4){animation-delay:180ms}.hero-steps i:nth-child(5){animation-delay:240ms}
+@media(prefers-reduced-motion:reduce){.hero-steps i{animation:none}}
+
+/* Approach */
+.pillars{padding:64px 0 32px}
+.pillars .wrap{display:grid;gap:40px}
+.pillar{border-top:1px solid var(--bl-ink);padding-top:20px}
+.pillar .num{font-size:48px;line-height:1;letter-spacing:-.04em;color:var(--bl-clay);margin-bottom:24px}
+.pillar h2{font-size:32px;line-height:38px;letter-spacing:-.02em;margin:8px 0 12px}
+.pillar p{margin:0;max-width:420px}
+
+/* Services */
+.objects{padding:64px 0}
+.objects .intro{display:grid;gap:16px;margin-bottom:32px}
+.objects h2{font-size:32px;line-height:38px;letter-spacing:-.02em;margin:0}
+.objects .intro p{margin:0;font-size:18px;line-height:28px;max-width:560px}
+/* Gallery */
+.gallery{display:grid;grid-template-columns:minmax(0,1fr);gap:32px 24px}
+.gallery figure{margin:0}
+.gallery img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;background:var(--bl-linen)}
+.note{font-size:14px;line-height:20px;color:#5d5f57;margin-top:16px}
+
+/* Ventures */
+.fjord{background:var(--bl-paper);color:var(--bl-ink);border-top:1px solid var(--bl-ink)}
+.fjord .wrap{padding-top:64px;padding-bottom:64px}
+.fjord h2{font-size:40px;line-height:1.02;letter-spacing:-.025em;margin:16px 0 32px}
+.vcard{border-top:1px solid rgba(37,39,35,.25);padding:24px 0 8px;display:grid;gap:8px}
+.vcard h3{margin:0;font-size:24px;line-height:30px;font-weight:400}
+.vcard p{margin:0;max-width:560px}
+.vcard .eyebrow{opacity:1}
+
+/* Contact */
+.contact .wrap{padding-top:72px;padding-bottom:48px;position:relative}
+.contact h2{font-size:44px;line-height:1;letter-spacing:-.03em;margin:16px 0 32px;max-width:760px}
+.btn{display:inline-flex;align-items:center;gap:8px;height:46px;padding:0 20px;border:1px solid var(--bl-clay);background:var(--bl-clay);color:var(--bl-paper);text-decoration:none;transition:background-color 200ms ease-out,color 200ms ease-out,border-color 200ms ease-out}
+.btn:hover{background:var(--bl-paper);color:var(--bl-ink);border-color:var(--bl-paper)}
+.foot{border-top:1px solid rgba(242,238,229,.25)}
+.foot .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-top:20px;padding-bottom:28px;font-size:14px;line-height:20px}
+.foot a{text-underline-offset:4px}
+
+/* Editorial reveal */
+.reveal{opacity:1;transform:none}
+.js .reveal{opacity:0;transform:translateY(2px);transition:opacity 360ms ease-out,transform 360ms ease-out}
+.js .reveal.in{opacity:1;transform:none}
+
+@media(min-width:761px){
+  .wrap{padding:0 48px}
+  .head .wrap{height:96px}.head nav .d{display:inline}
+  .hero .wrap{padding-top:96px;padding-bottom:300px}
+  .hero h1{font-size:104px}
+  .hero p{font-size:20px;line-height:30px}
+  .hero-steps{height:240px;left:40%}
+  .pillars{padding:96px 0 32px}
+  .pillars .wrap{grid-template-columns:repeat(3,1fr);gap:24px}
+  .objects{padding:96px 0}
+  .objects .intro{grid-template-columns:5fr 7fr;align-items:end;gap:24px}
+  .objects h2{font-size:40px;line-height:46px}
+  .gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 24px}
+  .gallery img{aspect-ratio:3/2}
+  .fjord .wrap{padding-top:96px;padding-bottom:96px;display:grid;grid-template-columns:repeat(12,1fr);gap:24px}
+  .fjord .lead{grid-column:1/6}
+  .fjord .items{grid-column:7/-1}
+  .fjord h2{font-size:48px}
+  .contact .wrap{padding-top:120px;padding-bottom:72px}
+  .contact h2{font-size:80px}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}.js .reveal{opacity:1;transform:none}}
+/* Services feature */
+.brand-feature .eyebrow{display:block;margin-bottom:12px;color:var(--bl-clay)}
+.brand-feature .intro{align-items:start}
+.brand-feature .intro p{margin-bottom:12px}
+.fjord{margin-top:64px}
+@media(min-width:761px){
+  .fjord{margin-top:96px}
+}
